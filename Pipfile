@@ -12,6 +12,8 @@ seaborn = "*"
 keras = "*"
 tqdm = "*"
 tensorflow-gpu = "*"
+ipykernel = "*"
+pyaml = "*"
 
 [dev-packages]
 ipykernel = "*"

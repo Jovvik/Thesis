@@ -27,19 +27,73 @@ dataset:
   path: gestures-dataset
   split_point: 2449
   split_point_6: 735
+  test_size: 0.2
+  input_dimensions: 24
+  seed: 1
 
 knn:
   neighbors:
     min: 2
     max: 100
+    kind: linear
 
 decision_tree:
   depth:
     min: 2
     max: 50
+    kind: linear
 
 random_forest:
   estimators:
     min: 2
     max: 1200
     step: 100
+    kind: linear
+
+svm:
+  kernel: poly
+  gamma: scale
+  degree:
+    min: 1
+    max: 10
+    kind: linear
+  seed: 0
+
+ml:
+  epochs: 1000
+  batch_size: 128
+  patience: 50
+
+sgd:
+  lr: 0.01
+  decay: 1e-6
+  momentum: 0.9
+  nesterov: True
+
+mlp:
+  sklearn:
+    neurons:
+      min: 1
+      max: 256
+      step: 16
+      kind: linear
+    seed: 0
+  keras:
+    dropout: 0.3
+    kernel_max_norm: 3.
+    activation:
+      hidden: relu
+      output: softmax
+    neurons:
+      min: 32
+      max: 1024
+      step: 2
+      kind: exponential
+    averaging_count: 10
+
+cnn:
+  activation:
+    hidden: relu
+    output: softmax
+  pool: 2
+  dropout: 0.3
