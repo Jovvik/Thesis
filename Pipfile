@@ -9,14 +9,17 @@ pandas = "*"
 pywavelets = "*"
 scikit-learn = "*"
 seaborn = "*"
-keras = "*"
 tqdm = "*"
-tensorflow-gpu = "*"
 ipykernel = "*"
 pyaml = "*"
 
 [dev-packages]
 ipykernel = "*"
+black = "*"
+yapf = "*"
 
 [requires]
 python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true

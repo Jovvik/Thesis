@@ -1,28 +1,3 @@
-users: ["U01", "U02", "U03", "U04", "U05", "U06", "U07", "U08"]
-gestures:
-  - "01"
-  - "02"
-  - "03"
-  - "04"
-  - "05"
-  - "06"
-  - "07"
-  - "08"
-  - "09"
-  - "10"
-  - "11"
-  - "12"
-  - "13"
-  - "14"
-  - "15"
-  - "16"
-  - "17"
-  - "18"
-  - "19"
-  - "20"
-
-wavelet_name: db1
-
 dataset:
   path: gestures-dataset
   split_point: 2449
@@ -30,6 +5,29 @@ dataset:
   test_size: 0.2
   input_dimensions: 24
   seed: 1
+  wavelet_name: db1
+  users: [U01, U02, U03, U04, U05, U06, U07, U08]
+  gestures:
+    - "01"
+    - "02"
+    - "03"
+    - "04"
+    - "05"
+    - "06"
+    - "07"
+    - "08"
+    - "09"
+    - "10"
+    - "11"
+    - "12"
+    - "13"
+    - "14"
+    - "15"
+    - "16"
+    - "17"
+    - "18"
+    - "19"
+    - "20"
 
 knn:
   neighbors:
@@ -55,7 +53,7 @@ svm:
   gamma: scale
   degree:
     min: 1
-    max: 10
+    max: 20
     kind: linear
   seed: 0
 
@@ -71,29 +69,9 @@ sgd:
   nesterov: True
 
 mlp:
-  sklearn:
-    neurons:
-      min: 1
-      max: 256
-      step: 16
-      kind: linear
-    seed: 0
-  keras:
-    dropout: 0.3
-    kernel_max_norm: 3.
-    activation:
-      hidden: relu
-      output: softmax
-    neurons:
-      min: 32
-      max: 1024
-      step: 2
-      kind: exponential
-    averaging_count: 10
-
-cnn:
-  activation:
-    hidden: relu
-    output: softmax
-  pool: 2
-  dropout: 0.3
+  neurons:
+    min: 1
+    max: 256
+    step: 2
+    kind: exponential
+  seed: 0
